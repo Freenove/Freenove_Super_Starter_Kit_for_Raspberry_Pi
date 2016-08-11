@@ -63,7 +63,7 @@ def loop():
                 time.sleep(0.001)# display the next column
                 x>>=1
         for k in range(0,len(data)-8):#len(data) total number of "0-F" columns 
-            for j in range(0,20):# times of repeated displaying LEDMatrix in every frame, the bigger the “j”, the longer the display time.
+            for j in range(0,20):# times of repeated displaying LEDMatrix in every frame, the bigger the "j", the longer the display time.
                 x=0x80      # Set the column information to start from the first column
                 for i in range(k,k+8):
                     GPIO.output(latchPin,GPIO.LOW)

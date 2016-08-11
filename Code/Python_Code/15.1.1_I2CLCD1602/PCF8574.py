@@ -1,6 +1,6 @@
 ########################################################################
 # Filename    : PCF8574.py
-# Description : PCF8574拓展GPIO
+# Description : PCF8574 as Raspberry GPIO
 # Author      : freenove
 # modification: 2016/06/26
 ########################################################################
@@ -16,19 +16,19 @@ class PCF8574_I2C(object):
 		self.address = address
 		self.currentValue = 0
 		
-	def readByte(self):#读取所有PCF8574端口的数据，由于电路连接原因，返回值为上次的端口写入值，并不是真正的端口值
+	def readByte(self):#Read PCF8574 all port of the data
 		#value = self.bus.read_byte(self.address)
 		return self.currentValue#value
 		
-	def writeByte(self,value):#向PCF8574所有端口写数据
+	def writeByte(self,value):#Write data to PCF8574 port
 		self.currentValue = value
 		self.bus.write_byte(self.address,value)
 
-	def digitalRead(self,pin):#读PCF8574其中一个端口的数据
+	def digitalRead(self,pin):#Read PCF8574 one port of the data
 		value = readByte()	
 		return (value&(1<<pin)==(1<<pin)) and 1 or 0
 		
-	def digitalWrite(self,pin,newvalue):#向PCF8574其中一个端口写数据
+	def digitalWrite(self,pin,newvalue):#Write data to PCF8574 one port
 		value = self.currentValue #bus.read_byte(address)
 		if(newvalue == 1):
 			value |= (1<<pin)
@@ -48,7 +48,7 @@ def loop():
 		print 'Is 0x00? %x'%(mcp.readByte())
 		time.sleep(1)
 		
-class PCF8574_GPIO(object):#函数接口标准化
+class PCF8574_GPIO(object):#Standardization function interface
 	OUT = 0
 	IN = 1
 	BCM = 0
@@ -56,13 +56,13 @@ class PCF8574_GPIO(object):#函数接口标准化
 	def __init__(self,address):
 		self.chip = PCF8574_I2C(address)
 		self.address = address
-	def setmode(self,mode):#PCF8574的端口属于准双向IO，不需要设置输入输出模式
+	def setmode(self,mode):#PCF8574 port belongs to two-way IO, do not need to set the input and output model
 		pass
 	def setup(self,pin,mode):
 		pass
-	def input(self,pin):#读取PCF8574一个端口的数据
+	def input(self,pin):#Read PCF8574 one port of the data
 		return self.chip.digitalRead(pin)
-	def output(self,pin,value):#向PCF8574其中一个端口写数据
+	def output(self,pin,value):#Write data to PCF8574 one port
 		self.chip.digitalWrite(pin,value)
 		
 def destroy():
