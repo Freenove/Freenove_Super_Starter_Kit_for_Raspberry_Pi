@@ -13,8 +13,8 @@ address = 0x48
 bus=smbus.SMBus(1)
 cmd=0x40
 # define the pin connected to L293D 
-motoRPin1 = 13
-motoRPin2 = 11
+motorPin1 = 13
+motorPin2 = 11
 enablePin = 15
 
 def analogRead(chn):
@@ -27,8 +27,8 @@ def analogWrite(value):
 def setup():
     global p
     GPIO.setmode(GPIO.BOARD)    # set mode for pin
-    GPIO.setup(motoRPin1,GPIO.OUT)
-    GPIO.setup(motoRPin2,GPIO.OUT)
+    GPIO.setup(motorPin1,GPIO.OUT)
+    GPIO.setup(motorPin2,GPIO.OUT)
     GPIO.setup(enablePin,GPIO.OUT)
         
     p = GPIO.PWM(enablePin,1000)# creat PWM
@@ -41,16 +41,16 @@ def mapNUM(value,fromLow,fromHigh,toLow,toHigh):
 def motor(ADC):
     value = ADC -128
     if (value > 0):
-        GPIO.output(motoRPin1,GPIO.HIGH)
-        GPIO.output(motoRPin2,GPIO.LOW)
+        GPIO.output(motorPin1,GPIO.HIGH)
+        GPIO.output(motorPin2,GPIO.LOW)
         print 'Turn Forward...'
     elif (value < 0):
-        GPIO.output(motoRPin1,GPIO.LOW)
-        GPIO.output(motoRPin2,GPIO.HIGH)
+        GPIO.output(motorPin1,GPIO.LOW)
+        GPIO.output(motorPin2,GPIO.HIGH)
         print 'Turn Backward...'
     else :
-        GPIO.output(motoRPin1,GPIO.LOW)
-        GPIO.output(motoRPin2,GPIO.LOW)
+        GPIO.output(motorPin1,GPIO.LOW)
+        GPIO.output(motorPin2,GPIO.LOW)
         print 'Motor Stop...'
     p.start(mapNUM(abs(value),0,128,0,100))
     print 'The PWM duty cycle is %d%%\n'%(abs(value)*100/127)   #print PMW duty cycle.
