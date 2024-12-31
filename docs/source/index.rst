@@ -2,9 +2,17 @@
 Freenove Super Starter Kit for Raspberry Pi
 ######################################################
 
-.. toctree::
-   :maxdepth: 2
-   :caption: FNK0019
-   :glob:
+FNK0019
+******************************************************
 
-   fnk0019/fnk0019.rst
+Select the language you want to use.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: language
+    
+   fnk0019/c-lang-tutorial.rst
+   fnk0019/python-tutorial.rst
+   fnk0019/processing-tutorial.rst
+   fnk0019/java-tutorial.rst
+   fnk0019/scratch-tutorial.rst
