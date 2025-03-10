@@ -103,14 +103,14 @@ Sketch
 
 In this chapter, we will learn how to drive the LED Bar by expanding the chip.
 
-Sketch_15_FlowingLight02
+Sketch_FlowingLight02
 ----------------------------------------------------------------
 
 First, enter where the project is located:
 
 .. code-block:: console
     
-    $ cd ~/Freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02
+    $ cd ~/Freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02
 
 .. image:: ../_static/imgs/java_Barled.png
     :align: center
@@ -142,13 +142,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_Barled_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
+    :dedent:
 
 Define the data transfer order for enumeration types.
 
@@ -158,70 +159,81 @@ Define the data transfer order for enumeration types.
 
 Define the data pin, latch pin, clock pin, and Pi4j context.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 15-18
+    :dedent:
 
 Constructor, initialize pins and context.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 20-25
+    :dedent:
 
 Delay function in microsecond.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 27-32
+    :dedent:
 
 Shift function for expansion chip. The Raspberry Pi sends data to the extended chip through GPIO.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 34-53
+    :dedent:
 
 Update the expansion chip latch to let the expansion chip output the signal. Usually you need to first call the shiftOut function to input data to the expansion chip, and then call the updateLatch function to have the expansion chip output the signal level corresponding to the data.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 55-59
+    :dedent:
 
 When Pi4j context is not used, shut it down to release resources.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 61-63
+    :dedent:
 
 Define the pin number of the driver expansion chip.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 67-69
+    :dedent:
 
 Create a pi4j automatic context and create an HC595 instance.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 72-73
+    :dedent:
 
 The Raspberry Pi controls the LED bar to flow from left to right and then from right to left.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_11_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
     :lines: 77-95
+    :dedent:
 
 Shutdown HC595 instance resources.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
-    :linenos: 
-    :language: java
-    :lines: 96-98
+.. code-block:: c
+    :linenos:
+
+    finally {  
+        ledbar.shutdown();  
+    }  

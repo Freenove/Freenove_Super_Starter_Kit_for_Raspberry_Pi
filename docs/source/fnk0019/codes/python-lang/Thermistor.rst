@@ -19,7 +19,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |       
 |                                                               |                                                            
 |3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Thermistor x1                 |   Resistor 10kΩ x3            |
 |                               |                               |
 | |Thermistor|                  |  |Resistor-10kΩ|              |                           
@@ -51,13 +51,8 @@ Thermistor
 
 Thermistor is a temperature sensitive resistor. When it senses a change in temperature, the resistance of the Thermistor will change. We can take advantage of this characteristic by using a Thermistor to detect temperature intensity. A Thermistor and its electronic symbol are shown below.
 
-.. image:: ../_static/imgs/Thermistor.png
-        :width: 10%
-        :align: center
-
-.. image:: ../_static/imgs/Thermistor-2.png
-        :width: 15%
-        :align: center
+.. image:: ../_static/imgs/11_00.png
+    :align: center
 
 The relationship between resistance value and temperature of a thermistor is:
 
@@ -144,21 +139,21 @@ Code
 
 In this project code, the ADC value still needs to be read, but the difference here is that a specific formula is used to calculate the temperature value.
 
-Python Code 11.1.1 Thermometer
+Python Code Thermometer
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
-1.	Use cd command to enter 11.1.1_Thermometer directory of Python code.
+1.	Use cd command to enter 10.1.1_Thermometer directory of Python code.
 
 .. code-block:: console
 
-    $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/11.1.1_Thermometer
+    $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/10.1.1_Thermometer
 
 2.	Use python command to execute Python code “Thermometer.py”.
 
@@ -173,7 +168,7 @@ After the program is executed, the Terminal window will display the current ADC 
 
 The following is the code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/11.1.1_Thermometer/Thermometer.py
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/10.1.1_Thermometer/Thermometer.py
     :linenos: 
     :language: python
 

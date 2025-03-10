@@ -30,7 +30,7 @@ Component List
 | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
 |                                                 |                               |  
 +-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
+|   Jumper Wire M/M x15                                                           |
 |                                                                                 | 
 |      |jumper-wire|                                                              |
 +---------------------------------------------------------------------------------+
@@ -119,21 +119,22 @@ Code
 
 The code used in this project is identical with what was used in the last chapter.
 
-Python Code 10.1.1 Nightlamp
+Python Code Nightlamp
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :doc:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail. 
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use cd command to enter 10.1_Nightlamp directory of Python code.
 
 .. code-block:: console
 
-    $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/10.1.1_Nightlamp
+    $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/9.1.1_Nightlamp
 
 2.	Use the python command to execute the Python code “Nightlamp.py”.
 
@@ -145,7 +146,7 @@ After the program is executed, if you cover the Photoresistor or increase the li
 
 The following is the program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/10.1.1_Nightlamp/Nightlamp.py
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/9.1.1_Nightlamp/Nightlamp.py
     :linenos: 
     :language: python
 
