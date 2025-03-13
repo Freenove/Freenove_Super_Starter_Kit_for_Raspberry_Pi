@@ -59,4 +59,9 @@ C language tutorial
    codes/c-lang/74HC595 & LED Matrix.rst
    codes/c-lang/LCD1602.rst
    codes/c-lang/Other Components.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+   
    codes/c-lang/WhatsNext.rst
