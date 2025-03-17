@@ -134,10 +134,6 @@ html_js_files = [
 
 html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
 
-html_css_files = [
-    "css/color-roles.css",
-]
-
 intersphinx_mapping = {
     # "rpi-starter-kit": ("https://freenove-docs2.readthedocs.io/projects/fnk0066/en/latest/", None),
 }
