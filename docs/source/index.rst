@@ -31,6 +31,8 @@ This product provides the following online documents.
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
+   :caption: FNK0019
     
    fnk0019/c-lang-tutorial.rst
    fnk0019/python-tutorial.rst
